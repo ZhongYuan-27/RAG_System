@@ -7,7 +7,7 @@
     ]
   },
   {
-    "query": "What is an investment decision",
+    "query": "What is an investment decision?",
     "relevant_doc_ids": [
       "corporate_finance_corporate_finance_part_02",
       "corporate_finance_corporate_finance_part_03"

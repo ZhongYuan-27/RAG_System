@@ -6,9 +6,6 @@ from src.vector_store.retrieve import retrieve
 
 
 def precision_at_k(retrieved_doc_ids: list[str], relevant_doc_ids: set[str], k: int) -> float:
-    """
-    Precision@K = number of relevant retrieved documents in top K / K.
-    """
     top_k = retrieved_doc_ids[:k]
 
     if k == 0:
@@ -20,10 +17,6 @@ def precision_at_k(retrieved_doc_ids: list[str], relevant_doc_ids: set[str], k: 
 
 
 def reciprocal_rank(retrieved_doc_ids: list[str], relevant_doc_ids: set[str]) -> float:
-    """
-    Reciprocal rank = 1 / rank of the first relevant retrieved document.
-    If no relevant document is retrieved, return 0.
-    """
     for index, doc_id in enumerate(retrieved_doc_ids, start=1):
         if doc_id in relevant_doc_ids:
             return 1 / index
@@ -32,9 +25,6 @@ def reciprocal_rank(retrieved_doc_ids: list[str], relevant_doc_ids: set[str]) ->
 
 
 def evaluate_query(query_item: dict[str, Any], top_k: int = 5) -> dict[str, Any]:
-    """
-    Run retrieval for one query and calculate metrics.
-    """
     query = query_item["query"]
     relevant_doc_ids = set(query_item["relevant_doc_ids"])
 
@@ -72,9 +62,6 @@ def evaluate_query(query_item: dict[str, Any], top_k: int = 5) -> dict[str, Any]
 
 
 def write_markdown_report(results: list[dict[str, Any]], output_path: Path, top_k: int = 5) -> None:
-    """
-    Save evaluation results as a readable Markdown report.
-    """
     mean_precision = sum(r[f"precision@{top_k}"] for r in results) / len(results)
     mrr = sum(r["reciprocal_rank"] for r in results) / len(results)
 

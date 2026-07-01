@@ -12,9 +12,6 @@ load_dotenv()
 
 
 def format_context(retrieved_chunks: list[dict[str, Any]]) -> str:
-    """
-    Convert retrieved chunks into a context string for the LLM.
-    """
     context_parts = []
 
     for item in retrieved_chunks:
@@ -34,9 +31,6 @@ def format_context(retrieved_chunks: list[dict[str, Any]]) -> str:
 
 
 def build_prompt(question: str, context: str) -> str:
-    """
-    Build the RAG prompt sent to Claude.
-    """
     return f"""
 You are a retrieval-augmented generation assistant.
 
@@ -60,9 +54,6 @@ Answer:
 
 
 def generate_answer(question: str, top_k: int = 5) -> dict[str, Any]:
-    """
-    Retrieve relevant chunks and generate an answer with Claude.
-    """
     retrieved_chunks = retrieve(query=query_clean(question), top_k=top_k)
 
     context = format_context(retrieved_chunks)
@@ -126,9 +117,6 @@ def generate_answer(question: str, top_k: int = 5) -> dict[str, Any]:
 
 
 def query_clean(question: str) -> str:
-    """
-    Basic query cleaning.
-    """
     return question.strip()
 
 

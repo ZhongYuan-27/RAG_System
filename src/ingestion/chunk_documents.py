@@ -3,9 +3,6 @@ import json
 
 
 def chunk_text(text: str, chunk_size: int = 500, overlap: int = 100) -> list[str]:
-    """
-    Split text into overlapping word-based chunks.
-    """
     words = text.split()
 
     if chunk_size <= overlap:
@@ -33,9 +30,6 @@ def build_chunks(
     chunk_size: int = 500,
     overlap: int = 100,
 ) -> list:
-    """
-    Read documents.json and create chunks.json.
-    """
     with documents_path.open("r", encoding="utf-8") as f:
         documents = json.load(f)
 

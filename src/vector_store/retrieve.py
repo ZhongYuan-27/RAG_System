@@ -4,10 +4,6 @@ from sentence_transformers import SentenceTransformer
 
 
 class ChromaRetriever:
-    """
-    Retrieve top-k relevant chunks from Chroma using semantic similarity.
-    """
-
     def __init__(
         self,
         chroma_dir: Path,
@@ -24,9 +20,6 @@ class ChromaRetriever:
         self.collection = self.client.get_collection(name=collection_name)
 
     def retrieve(self, query: str, top_k: int = 5) -> list:
-        """
-        Retrieve top-k chunks for a query.
-        """
         query_embedding = self.model.encode([query]).tolist()[0]
 
         results = self.collection.query(
@@ -51,9 +44,6 @@ class ChromaRetriever:
 
 
 def get_default_retriever() -> ChromaRetriever:
-    """
-    Create a retriever using default project paths.
-    """
     project_root = Path(__file__).resolve().parents[2]
     chroma_dir = project_root / "Data" / "chroma_db"
 
@@ -65,9 +55,6 @@ def get_default_retriever() -> ChromaRetriever:
 
 
 def retrieve(query: str, top_k: int = 5) -> list:
-    """
-    Convenience function used by later RAG pipeline.
-    """
     retriever = get_default_retriever()
     return retriever.retrieve(query, top_k=top_k)
 

@@ -58,7 +58,7 @@ def prepare_pdf_documents(
             "title": title,
             "source": str(pdf_path),
             "source_path": str(pdf_path),
-            "source_html": str(pdf_path),  # keep this for compatibility with existing code
+            "source_html": str(pdf_path),  
             "content": content,
             "metadata": {
                 "file_type": "pdf",

@@ -5,9 +5,6 @@ from sentence_transformers import SentenceTransformer
 
 
 def load_chunks(chunks_path: Path) -> list:
-    """
-    Load chunks from chunks.json.
-    """
     with chunks_path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -19,9 +16,6 @@ def build_chroma_vectorstore(
     model_name: str = "all-MiniLM-L6-v2",
     reset_collection: bool = True,
 ):
-    """
-    Build a persistent Chroma vector database from text chunks.
-    """
     chunks = load_chunks(chunks_path)
 
     print(f"Loaded {len(chunks)} chunks.")
