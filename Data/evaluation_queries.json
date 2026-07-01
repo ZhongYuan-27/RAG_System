@@ -1,0 +1,37 @@
+[
+  {
+    "query": "What is net present value?",
+    "relevant_doc_ids": [
+      "corporate_finance_corporate_finance_part_04",
+      "corporate_finance_corporate_finance_part_08"
+    ]
+  },
+  {
+    "query": "What is an investment decision",
+    "relevant_doc_ids": [
+      "corporate_finance_corporate_finance_part_02",
+      "corporate_finance_corporate_finance_part_03"
+    ]
+  },
+  {
+    "query": "What is common stocks?",
+    "relevant_doc_ids": [
+      "corporate_finance_corporate_finance_part_07",
+      "corporate_finance_corporate_finance_part_08"
+    ]
+  },
+  {
+    "query": "What are call and put options?",
+    "relevant_doc_ids": [
+      "corporate_finance_corporate_finance_part_33",
+      "corporate_finance_corporate_finance_part_34"
+    ]
+  },
+  {
+    "query": "How to set up a hedge?",
+    "relevant_doc_ids": [
+      "corporate_finance_corporate_finance_part_43",
+      "corporate_finance_corporate_finance_part_44"
+    ]
+  }
+]

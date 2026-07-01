@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Outputs
+outputs/
+
+# Chroma vector database
+Data/chroma_db/
+
+# Large/raw data
+Data/raw/
+
+# Optional generated files
+Data/documents.json
+Data/chunks.json
