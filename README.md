@@ -1,6 +1,6 @@
 # RAG System for PDF Question Answering
 
-This project implements a Retrieval-Augmented Generation (RAG) system for answering questions based on PDF documents.
+This project implements a Retrieval-Augmented Generation (RAG) system for answering questions based on PDF documents about corporate finance.
 
 The system processes raw PDF files, extracts text, splits documents into smaller chunks, builds a vector database using embeddings, retrieves relevant document chunks for a user query, and generates answers with a large language model.
 
